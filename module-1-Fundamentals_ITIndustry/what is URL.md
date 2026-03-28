@@ -2,10 +2,9 @@
   1. URL stands for universal resource locator
   2. There are two of URL  
 
-  
     **architectures of URL** 
 
-    ![alt text](image-2.png)
+      ![alt text](image-3.png)
 
   **types of URL**
 
