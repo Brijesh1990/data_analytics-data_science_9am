@@ -2,11 +2,11 @@
   1. URL stands for universal resource locator
   2. There are two of URL  
 
-    **architectures of URL** 
+     **architectures of URL** 
 
-      ![alt text](image-3.png)
+      ![alt text](image-4.png)
 
-  **types of URL**
+     **types of URL**
 
      1.absolute URL : website open and load first page i.e called absolute URL.
         examples : https://www.tops-int.com/ 
