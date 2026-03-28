@@ -1,23 +1,19 @@
-# what is protocol ? 
-  1. protocol is a set of rules 
-  2. protocol set a rules to open your web content secured or not on broswers 
+# what is URL ? 
+  1. URL stands for universal resource locator
+  2. There are two of URL  
 
-  **types of protocol**
+  **types of URL**
 
-     1. http (hypertext transfer protocol) 
-        examples : not secured 
+     1.absolute URL : website open and load first page i.e called absolute URL.
+        examples : https://www.tops-int.com/ 
         
-     2. https (secured hypertext transfer protocol) 
-        examples : fully secured
-        https://onlinesbi.sbi.bank.in/
+     2. relative URL :website open and load webpages i.e called relative URL 
+        examples : https://www.tops-int.com/placements
+      
 
-     3. SMTP
-     4. MIME 
-     5. POP
+    **architectures of URL** 
 
-
-    **architectures of protocol** 
-
-     ![alt text](image.png)    
+    ![alt text](image-2.png)
+         
 
 

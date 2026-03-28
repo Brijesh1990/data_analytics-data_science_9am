@@ -12,7 +12,7 @@
 
      ```
   2. Login on github 
-  3. create a respository on github 
+  3. create a repository on github 
   4. download github software (gitbash)
   5. upload local data on github repository 
 
