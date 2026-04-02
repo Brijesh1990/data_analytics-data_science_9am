@@ -70,12 +70,80 @@ create table employee(
    department varchar(50)
 );
 ```
+
+**data types and size of column in tables**
+1. int (integer): Used to store integer values (e.g., 1, 100, -50) default size 11 first column as a id auto_increment primary key.
+
+2. varchar(size): Used to store variable-length character strings, where size specifies the maximum number of characters (e.g., varchar(50) can store up to 50 characters). default size 255
+
+3. date: Used to store date values in the format 'YYYY-MM-DD' (e.g., '2024-06-01').
+
+4. float: Used to store floating-point numbers (e.g., 3.14, price : 25.50) .
+
+5. boolean: Used to store true/false values (e.g., true, false).
+
+6. text: Used to store large amounts of text data (e.g., articles, descriptions).
+
+7. datetime: Used to store date and time values in the format 'YYYY-MM-DD HH:MM:SS' (e.g., '2024-06-01 12:30:00').
+
+8. char(size): Used to store fixed-length character strings, where size specifies the exact number of characters (e.g., char(10) can store exactly 10 characters).
+
+9. decimal(size, d): Used to store decimal numbers with a specified precision (size) and scale (d) (e.g., decimal(10, 2) can store numbers with up to 10 digits and 2 decimal places).
+
+10. enum (enumerated): Used to store a predefined set of values (e.g., enum('small', 'medium', 'large') can store only the values 'small', 'medium', or 'large').
+
+examples: status enum('active', 'inactive') can store only the values 'active' or 'inactive'.
+
+11. bigint: Used to store large integer values (e.g., 1234567890123456789) default size 20
+
+12. auto_increment: Used to automatically generate a unique value for a column (e.g., id int auto_increment) often used for primary key columns.
+
+
 # rules to create table
 1. The table name must be unique within the database.
 2. The table name must start with a letter (a-z) or an underscore (_).
-3. The table name can contain letters, numbers, and underscores, but it cannot contain spaces or special characters.
+3. The table name can contain letters, numbers, and underscores, but it cannot contain spaces or special characters. (@ , $ , % , & , * , etc.)
 4. Each column in the table must have a unique name and a specified data type (e.g., int, varchar, date).
 5. The table must have at least one column defined, and it can have a maximum of 1024 columns, depending on the database system being used.
+
+
+**create a table of contactus:**
+```
+create table contactus(
+   id int auto_increment primary key,
+   name varchar(100),
+   email varchar(100),
+   phone bigint,
+   message text,
+   created_at datetime
+);
+
+```
+
+**create table of country:**
+```   
+create table country(
+   id int auto_increment primary key,
+   name varchar(100),
+   population bigint,
+   area float,
+   capital varchar(100)
+);
+
+```
+
+**home work:**
+
+ 1. create student tables
+ 2. create employee tables
+ 3. create product tables
+ 4. create order tables
+ 5. create customer tables
+ 6. create supplier tables
+ 7. create department tables
+ 8. create city tables
+ 9. create country tables
+ 10. create state tables
 
 
 - ALTER: Used to modify the structure of an existing database object (e.g., adding a column to a table).
