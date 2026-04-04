@@ -146,12 +146,41 @@ create table country(
  10. create state tables
 
 
-- ALTER: Used to modify the structure of an existing database object (e.g., adding a column to a table).
+# ALTER: 
 
+ 1. Used to modify the structure of an existing database tables (e.g., adding a column to a table).
+ 2. alter is used to add , modify , update a new column in existing tables 
+
+   **alter query**
+
+   1. how to add new column after pid in a table
+     ```
+       alter table products add productimage varchar(255) after pid;
+     ```
+
+   2. how to add new column at last 
+
+    ```
+     alter table department add added_date datetime;
+    ```  
+
+  3. how to change a columnname in a table
+
+     ```
+     alter table department change departmentname depname varchar(255);
+
+     ```    
+# RENAME: 
+
+1. Used to change the name of an existing database table (e.g., renaming a table).
+2. Rename is used to change the tablename
+
+   **how to change tablename**
+   ```
+   rename table customer to shop_consumers;
+   ```
 - DROP: Used to delete an existing database object (e.g., dropping a table).
-- RENAME: Used to change the name of an existing database object (e.g., renaming a table).
 - TRUNCATE: Used to delete all records from a table while keeping the structure intact.
-
 
 
 2. DML (Data Manipulation Language): These commands are used to manipulate the data within a database, including inserting, updating, and deleting records. Examples include INSERT, UPDATE, and DELETE.
