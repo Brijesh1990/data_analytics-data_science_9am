@@ -179,30 +179,88 @@ create table country(
    ```
    rename table customer to shop_consumers;
    ```
-- DROP: Used to delete an existing database object (e.g., dropping a table).
-- TRUNCATE: Used to delete all records from a table while keeping the structure intact.
+
+# DROP: Used to delete an existing database object (e.g., dropping a table).
+
+1. Drop is used to delete database and table structured permanently
+2. drop is deleted tables structured and data permanently
+
+   **how to drop table**
+   ```
+   drop table employee;
+   ```
+   **how to drop database**
+   ```
+   drop database dbshop;
+   ```
+
+# note:after drop we can not be rollback the data and structure of database and tables
+
+# TRUNCATE: Used to delete all records from a table while keeping the structure intact.
+
+1. Truncate is used to delete all records or rows from table.
+2. Truncate is empty the table records but the structure of table is not deleted.
+   **how to truncate table**
+   ```
+   truncate table employee;
+   or
+   truncate table shop_country;
+   ```
+# note : after truncate we can not be rollback the data but the structure of table is not deleted
 
 
-2. DML (Data Manipulation Language): These commands are used to manipulate the data within a database, including inserting, updating, and deleting records. Examples include INSERT, UPDATE, and DELETE.
-3. DQL (Data Query Language): These commands are used to retrieve data from a database. Examples include SELECT.
-4. TCL (Transaction Control Language): These commands are used to manage transactions within a database, including committing and rolling back changes. Examples include COMMIT and ROLLBACK.
+**Home work:**
+1. Create a table named "students" with columns for id, name, age, and grade.
+2. Alter the "students" table to add a new column for email.
+3. Rename the "students" table to "school_students".
+4. Drop the "school_students" table.
+5. Create a table named "employees" with columns for id, name, department, and salary.
+6. Alter the "employees" table to add a new column for hire_date.
+7. Rename the "employees" table to "company_employees".
+8. Drop the "company_employees" table.
+9. Create a table named "products" with columns for id, name, price, and quantity.
+10. Alter the "products" table to add a new column for description.
+11. Rename the "products" table to "store_products".
+12. Drop the "store_products" table.
+13. Create a table named "orders" with columns for id, customer_name, product_name, and order_date.
+14. Alter the "orders" table to add a new column for order_status.
+15. Rename the "orders" table to "customer_orders".
+16. Drop the "customer_orders" table.
+17. Create a table named "customers" with columns for id, name, email, and phone.
+18. Alter the "customers" table to add a new column for address.
+19. Rename the "customers" table to "client_customers".
+20. Drop the "client_customers" table.
 
 
+# DML (Data Manipulation Language): These commands are used to manipulate the data within a # name of all databases
 
-# what is database ?
-1. A database is an organized collection of data that is stored and accessed electronically.
+1. DML stands for Data Manipulation Language.
+2. DML commands are used to insert data into tables, deleted data from tables , update data from tables.
+   1. insert : used to insert data into tables
+        **how to insert single record in a table**
+        ```
+        insert into students (id, name, age, grade) values (1, 'John Doe', 20, 'A');
+        ```
+         **how to insert multiple record in a table**
+        ```
+         insert into students (id, name, age, grade) values 
+         (2, 'Jane Smith', 22, 'B'),
+         (3, 'Michael Johnson', 19, 'A'),
+         (4, 'Emily Davis', 21, 'C');
 
-2. It is designed to efficiently store, manage, and retrieve data for various applications and purposes.
+         or
 
-3. Databases can be classified into different types, such as relational databases, NoSQL databases, and object-oriented databases, based on their structure and data model.
+         insert into shop_state(sname,added_date) values
+         ('uttar pradesh','07/04/2026'),
+         ('mahrastra','07/04/2026'),
+         ('madhya pradesh','07/04/2026');
 
-   **list of database types:**
-   - Relational databases: These databases organize data into tables with rows and columns, and they
-    
-        use SQL for data manipulation and querying. Examples include MySQL, PostgreSQL, and Oracle.
+         ```
+
+   2. delete : used to delete data from tables
+   3. update : used to update data from tables
 
 
-# name of all databases
 
 1. MySQL
 2. PostgreSQL
