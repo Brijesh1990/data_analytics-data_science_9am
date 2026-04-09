@@ -257,8 +257,50 @@ create table country(
 
          ```
 
-   2. delete : used to delete data from tables
+   2. delete : used to delete data from tables single data delete or all table data delete and particular column data delete.
+
+        ```
+         1. delete all data from table 
+            delete from shop_state;
+
+         2. delete from shop_state where sid=3;
+
+         3. delete from shop_state where sid in(1,3);
+
+         4. delete from shop_state where sid between 50 and 1000;    
+
+
+        ````
+       
    3. update : used to update data from tables
+
+        ```
+         update shop_state set sname='rajsthan' where sid=4;
+         or
+         update shop_state set sname='rajsthan', added_date='09/04/2026' where sid=4;
+         or
+         update shop_contactus set name='aryan',email='aryan007@gmail.com',phone=6534587898,comment='hey i am atyan' where id=1;
+        ```
+   **note:after delete we rollback data using TCL**
+
+
+3. DQL :DQL stands for data query language
+        
+        1. DQL select data 
+        2. DQL fetch data from tables 
+        3. DQL select all data from table , particular data from tables etc.
+
+    **DQL commands**
+
+    ```
+     1. select * from shop_state;
+     2. select * from shop_state where sid=2;
+     3. select * from shop_state where sname='rajsthan';
+     4. select * from shop_state where sid in (1,3,5,7);
+     5. select * from sho_state where sid between 51 and 1000;
+
+    ```     
+
 
 
 
