@@ -297,11 +297,65 @@ create table country(
      2. select * from shop_state where sid=2;
      3. select * from shop_state where sname='rajsthan';
      4. select * from shop_state where sid in (1,3,5,7);
-     5. select * from sho_state where sid between 51 and 1000;
-
+     5. select * from shop_state where sid between 51 and 1000;
+     6. select * from shop_state where sid between 4 and 9;
+     7. select * from shop_state where sid limit 0,5;
+     8. select * from shop_state where sid limit 2,5;
     ```     
 
+    **order by:order by filter data from tables in ascending or descending order**
+   
+    1. order by ascending or descending order:
 
+       ```
+       1. select * from shop_state order by sname; 
+       2. select * from shop_state order by sname asc;
+       3. select * from shop_state order by sid desc;
+       4. select * from shop_state order by sid asc; 
+
+       ``` 
+
+   **group by : group by filter data in group of columns**
+    
+    2. group by :select and filter data from tables on group of columns 
+
+       ```
+       find the sum of salary on different-2 departments from shop_employee
+
+       1. select sum(salary),department from shop_employees GROUP by department;
+
+       ```   
+
+     **like operator : like operator is used to search data from tables using first and last or all character match in any word or name and its denoted by %**
+
+     ```
+     1. select * from shop_state where sname like 'B%';
+     2. select * from shop_state where sname like 'A%';
+     3. select * from shop_state where sname like 'B%' ORDER by sname asc;
+     4. select * from shop_state where sname like '%l' ORDER by sname asc;
+     5. select * from shop_state where sname like '%e' ORDER by sname asc;
+     6. select * from shop_state where sname like '%a%' ORDER by sname asc;
+     7. select * from shop_state where sname like '%a%' ORDER by sid desc;
+
+     ```
+# sql function : sql function are provide some inbuilt function of sql
+  
+  **types of SQL function**
+
+  1. scalar function
+
+     1. first()
+     2. last()
+     3. lcase()
+     4. ucase()
+
+  2. aggrigate function 
+  
+     1. sum()
+     2. avg()
+     3. max()
+     4. min()
+     5. count()
 
 
 1. MySQL
