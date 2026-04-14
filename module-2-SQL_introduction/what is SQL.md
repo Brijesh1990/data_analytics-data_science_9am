@@ -459,13 +459,13 @@ select max(salary) as second_highest_salary from shop_employees where salary <(s
   4. A pk is never return null values and stored a unique values 
 
 
-| id | employee_name |
-|----|---------------|
-| 1  | Amit Shah     |
-| 2  | Neha Patel    |
-| 3  | Raj Mehta     |
-| 4  | Priya Desai   |
-| 5  | Karan Singh   |
+| id | employee_name | age | salary |
+|----|---------------|-----|--------|
+| 1  | Amit Shah     | 65  | 100000 |
+| 2  | Neha Patel    | 22  | 25000  |
+| 3  | Raj Mehta     | 25  | 28500  |
+| 4  | Priya Desai   | 24  | 29500  |  
+| 5  | Karan Singh   | 25  | 30500  |
 
 # note : id is always primary key with auto_increments 
 
