@@ -16,32 +16,52 @@
 
 # advantages of SQL
 1. SQL is a powerful and efficient language for managing and manipulating relational databases, allowing users to perform complex queries and operations on large amounts of data.
+
 2. SQL is widely supported by various database systems, making it a versatile and widely adopted language in the field of data management.
+
 3. SQL is a declarative language, allowing users to specify what they want to achieve rather than how to achieve it, which can lead to more efficient and optimized query execution by the database engine.
+
 4. SQL provides a standardized way to interact with databases, making it easier for developers and data professionals to work with different database systems without needing to learn new languages or syntax.
+
 5. SQL allows for easy data manipulation and retrieval, enabling users to quickly access and analyze data stored in relational databases, which can lead to faster decision-making and improved business outcomes.
+
 6. SQL supports data integrity and security features, such as constraints, transactions, and user permissions, which help ensure the accuracy and confidentiality of data stored in databases.
+
 7. SQL is a widely used language in various industries, including finance, healthcare, e-commerce, and technology, making it a valuable skill for professionals in these fields to have in order to effectively manage and analyze data.
+
 8. SQL allows for easy integration with other programming languages and tools, making it a flexible and powerful tool for data analysis, reporting, and application development.
+
 9. SQL provides a rich set of functions and operators for performing calculations, aggregations, and data transformations, allowing users to derive insights and perform complex data analysis tasks on their databases.
+
 10. SQL is a mature and well-established language with a large community of users and developers, which means that there are plenty of resources, documentation, and support available for learning and using SQL effectively.
+
+
+# types of database
+
+1. MySQL
+2. PostgreSQL
+3. Oracle
+4. Microsoft SQL Server
+5. MongoDB
+6. Cassandra
+7. Redis
 
 
 # SQL commands
 
-  **types of SQL commands:**
+**types of SQL commands:**
 
 1. DDL (Data Definition Language): These commands are used to define and manage the structure of a database, including creating, altering, and dropping tables and other database objects. Examples include CREATE, ALTER, and DROP , RENAME , TRUNCATE.
 
-  **list of query or commands in DDL:**
+**list of query or commands in DDL:**
 - CREATE: Used to create a new database or database object (e.g., database, table, view, index).
 
-   ```
-   create database databasename;
-   or 
-   create database flip_cart;
-   
-   ```
+```
+create database databasename;
+or 
+create database flip_cart;
+
+```
 
 # rules to create database
 
@@ -51,24 +71,26 @@
 
 
 -CREATE table : create table structures using create commands
- **syntax to create table:**
+**syntax to create table:**
 
 ```
 create table tablename(
-   column1 datatype,
-   column2 datatype,
-   column3 datatype,
-   ...
+column1 datatype,
+column2 datatype,
+column3 datatype,
+...
 );
+
 ```
 **examples to create table:**
 ```
 create table employee(
-   id int,
-   name varchar(50),
-   age int,
-   department varchar(50)
+id int,
+name varchar(50),
+age int,
+department varchar(50)
 );
+
 ```
 
 **data types and size of column in tables**
@@ -100,6 +122,7 @@ examples: status enum('active', 'inactive') can store only the values 'active' o
 
 
 # rules to create table
+
 1. The table name must be unique within the database.
 2. The table name must start with a letter (a-z) or an underscore (_).
 3. The table name can contain letters, numbers, and underscores, but it cannot contain spaces or special characters. (@ , $ , % , & , * , etc.)
@@ -110,12 +133,12 @@ examples: status enum('active', 'inactive') can store only the values 'active' o
 **create a table of contactus:**
 ```
 create table contactus(
-   id int auto_increment primary key,
-   name varchar(100),
-   email varchar(100),
-   phone bigint,
-   message text,
-   created_at datetime
+id int auto_increment primary key,
+name varchar(100),
+email varchar(100),
+phone bigint,
+message text,
+created_at datetime
 );
 
 ```
@@ -123,76 +146,77 @@ create table contactus(
 **create table of country:**
 ```   
 create table country(
-   id int auto_increment primary key,
-   name varchar(100),
-   population bigint,
-   area float,
-   capital varchar(100)
+id int auto_increment primary key,
+name varchar(100),
+population bigint,
+area float,
+capital varchar(100)
 );
 
 ```
 
 **home work:**
 
- 1. create student tables
- 2. create employee tables
- 3. create product tables
- 4. create order tables
- 5. create customer tables
- 6. create supplier tables
- 7. create department tables
- 8. create city tables
- 9. create country tables
- 10. create state tables
+1. create student tables
+2. create employee tables
+3. create product tables
+4. create order tables
+5. create customer tables
+6. create supplier tables
+7. create department tables
+8. create city tables
+9. create country tables
+10. create state tables
 
 
 # ALTER: 
 
- 1. Used to modify the structure of an existing database tables (e.g., adding a column to a table).
- 2. alter is used to add , modify , update a new column in existing tables 
+1. Used to modify the structure of an existing database tables (e.g., adding a column to a table).
+2. alter is used to add , modify , update a new column in existing tables 
 
-   **alter query**
+**alter query**
 
-   1. how to add new column after pid in a table
-     ```
-       alter table products add productimage varchar(255) after pid;
-     ```
+1. how to add new column after pid in a table
+```
+alter table products add productimage varchar(255) after pid;
+```
 
-   2. how to add new column at last 
+2. how to add new column at last 
 
-    ```
-     alter table department add added_date datetime;
-    ```  
+```
+alter table department add added_date datetime;
+```  
 
-  3. how to change a columnname in a table
+3. how to change a columnname in a table
 
-     ```
-     alter table department change departmentname depname varchar(255);
+```
+alter table department change departmentname depname varchar(255);
 
-     ```    
+```    
 # RENAME: 
 
 1. Used to change the name of an existing database table (e.g., renaming a table).
 2. Rename is used to change the tablename
 
-   **how to change tablename**
-   ```
-   rename table customer to shop_consumers;
-   ```
+**how to change tablename**
+```
+rename table customer to shop_consumers;
+
+```
 
 # DROP: Used to delete an existing database object (e.g., dropping a table).
 
 1. Drop is used to delete database and table structured permanently
 2. drop is deleted tables structured and data permanently
 
-   **how to drop table**
-   ```
-   drop table employee;
-   ```
-   **how to drop database**
-   ```
-   drop database dbshop;
-   ```
+**how to drop table**
+```
+drop table employee;
+```
+**how to drop database**
+```
+drop database dbshop;
+```
 
 # note:after drop we can not be rollback the data and structure of database and tables
 
@@ -200,16 +224,17 @@ create table country(
 
 1. Truncate is used to delete all records or rows from table.
 2. Truncate is empty the table records but the structure of table is not deleted.
-   **how to truncate table**
-   ```
-   truncate table employee;
-   or
-   truncate table shop_country;
-   ```
+**how to truncate table**
+```
+truncate table employee;
+or
+truncate table shop_country;
+```
 # note : after truncate we can not be rollback the data but the structure of table is not deleted
 
 
 **Home work:**
+
 1. Create a table named "students" with columns for id, name, age, and grade.
 2. Alter the "students" table to add a new column for email.
 3. Rename the "students" table to "school_students".
@@ -236,132 +261,220 @@ create table country(
 
 1. DML stands for Data Manipulation Language.
 2. DML commands are used to insert data into tables, deleted data from tables , update data from tables.
-   1. insert : used to insert data into tables
-        **how to insert single record in a table**
-        ```
-        insert into students (id, name, age, grade) values (1, 'John Doe', 20, 'A');
-        ```
-         **how to insert multiple record in a table**
-        ```
-         insert into students (id, name, age, grade) values 
-         (2, 'Jane Smith', 22, 'B'),
-         (3, 'Michael Johnson', 19, 'A'),
-         (4, 'Emily Davis', 21, 'C');
+1. insert : used to insert data into tables
+**how to insert single record in a table**
+```
+insert into students (id, name, age, grade) values (1, 'John Doe', 20, 'A');
+```
+**how to insert multiple record in a table**
+```
+insert into students (id, name, age, grade) values 
+(2, 'Jane Smith', 22, 'B'),
+(3, 'Michael Johnson', 19, 'A'),
+(4, 'Emily Davis', 21, 'C');
 
-         or
+or
 
-         insert into shop_state(sname,added_date) values
-         ('uttar pradesh','07/04/2026'),
-         ('mahrastra','07/04/2026'),
-         ('madhya pradesh','07/04/2026');
+insert into shop_state(sname,added_date) values
+('uttar pradesh','07/04/2026'),
+('mahrastra','07/04/2026'),
+('madhya pradesh','07/04/2026');
 
-         ```
+```
 
-   2. delete : used to delete data from tables single data delete or all table data delete and particular column data delete.
+2. delete : used to delete data from tables single data delete or all table data delete and particular column data delete.
 
-        ```
-         1. delete all data from table 
-            delete from shop_state;
+```
+1. delete all data from table 
+delete from shop_state;
 
-         2. delete from shop_state where sid=3;
+2. delete from shop_state where sid=3;
 
-         3. delete from shop_state where sid in(1,3);
+3. delete from shop_state where sid in(1,3);
 
-         4. delete from shop_state where sid between 50 and 1000;    
+4. delete from shop_state where sid between 50 and 1000;    
 
 
-        ````
-       
-   3. update : used to update data from tables
+```
 
-        ```
-         update shop_state set sname='rajsthan' where sid=4;
-         or
-         update shop_state set sname='rajsthan', added_date='09/04/2026' where sid=4;
-         or
-         update shop_contactus set name='aryan',email='aryan007@gmail.com',phone=6534587898,comment='hey i am atyan' where id=1;
-        ```
-   **note:after delete we rollback data using TCL**
+3. update : used to update data from tables
+
+```
+update shop_state set sname='rajsthan' where sid=4;
+or
+update shop_state set sname='rajsthan', added_date='09/04/2026' where sid=4;
+or
+update shop_contactus set name='aryan',email='aryan007@gmail.com',phone=6534587898,comment='hey i am atyan' where id=1;
+```
+
+**note:after delete we rollback data using TCL**
 
 
 3. DQL :DQL stands for data query language
-        
-        1. DQL select data 
-        2. DQL fetch data from tables 
-        3. DQL select all data from table , particular data from tables etc.
 
-    **DQL commands**
+1. DQL select data 
+2. DQL fetch data from tables 
+3. DQL select all data from table , particular data from tables etc.
 
-    ```
-     1. select * from shop_state;
-     2. select * from shop_state where sid=2;
-     3. select * from shop_state where sname='rajsthan';
-     4. select * from shop_state where sid in (1,3,5,7);
-     5. select * from shop_state where sid between 51 and 1000;
-     6. select * from shop_state where sid between 4 and 9;
-     7. select * from shop_state where sid limit 0,5;
-     8. select * from shop_state where sid limit 2,5;
-    ```     
 
-    **order by:order by filter data from tables in ascending or descending order**
-   
-    1. order by ascending or descending order:
+**DQL commands**
 
-       ```
-       1. select * from shop_state order by sname; 
-       2. select * from shop_state order by sname asc;
-       3. select * from shop_state order by sid desc;
-       4. select * from shop_state order by sid asc; 
+```
+1. select * from shop_state;
+2. select * from shop_state where sid=2;
+3. select * from shop_state where sname='rajsthan';
+4. select * from shop_state where sid in (1,3,5,7);
+5. select * from shop_state where sid between 51 and 1000;
+6. select * from shop_state where sid between 4 and 9;
+7. select * from shop_state where sid limit 0,5;
+8. select * from shop_state where sid limit 2,5;
+```     
 
-       ``` 
+**order by:order by filter data from tables in ascending or descending order**
 
-   **group by : group by filter data in group of columns**
-    
-    2. group by :select and filter data from tables on group of columns 
+1. order by ascending or descending order:
 
-       ```
-       find the sum of salary on different-2 departments from shop_employee
+```
+1. select * from shop_state order by sname; 
+2. select * from shop_state order by sname asc;
+3. select * from shop_state order by sid desc;
+4. select * from shop_state order by sid asc; 
 
-       1. select sum(salary),department from shop_employees GROUP by department;
+``` 
 
-       ```   
+**group by : group by filter data in group of columns**
 
-     **like operator : like operator is used to search data from tables using first and last or all character match in any word or name and its denoted by %**
+2. group by :select and filter data from tables on group of columns 
 
-     ```
-     1. select * from shop_state where sname like 'B%';
-     2. select * from shop_state where sname like 'A%';
-     3. select * from shop_state where sname like 'B%' ORDER by sname asc;
-     4. select * from shop_state where sname like '%l' ORDER by sname asc;
-     5. select * from shop_state where sname like '%e' ORDER by sname asc;
-     6. select * from shop_state where sname like '%a%' ORDER by sname asc;
-     7. select * from shop_state where sname like '%a%' ORDER by sid desc;
+```
+find the sum of salary on different-2 departments from shop_employee
 
-     ```
+1. select sum(salary),department from shop_employees GROUP by department;
+
+```   
+
+**like operator : like operator is used to search data from tables using first and last or all character match in any word or name and its denoted by %**
+
+```
+1. select * from shop_state where sname like 'B%';
+2. select * from shop_state where sname like 'A%';
+3. select * from shop_state where sname like 'B%' ORDER by sname asc;
+4. select * from shop_state where sname like '%l' ORDER by sname asc;
+5. select * from shop_state where sname like '%e' ORDER by sname asc;
+6. select * from shop_state where sname like '%a%' ORDER by sname asc;
+7. select * from shop_state where sname like '%a%' ORDER by sid desc;
+
+```
 # sql function : sql function are provide some inbuilt function of sql
-  
-  **types of SQL function**
 
-  1. scalar function
+**types of SQL function**
 
-     1. first()
-     2. last()
-     3. lcase()
-     4. ucase()
+# aggrigate function 
 
-  2. aggrigate function 
-  
-     1. sum()
-     2. avg()
-     3. max()
-     4. min()
-     5. count()
+1. sum() : sum is used to sum the salary of employee
+     
+     examples :select sum(salary) from shop_employees; 
+               or
+               select sum(salary) as sum_of_salary from shop_employees;
+                
+2. avg() : find average of salary 
+           
+         examples: select avg(salary) as average_salary from shop_employees;
+                   or
+                   select avg(salary)  from shop_employees;  
+          
+3. max(): find the maximum values from table or salary of employee
+       
+       examples : select max(salary) from shop_employees;
+                  or
+                  select max(salary) as max_salary_employee from shop_employees;
 
 
-1. MySQL
-2. PostgreSQL
-3. Oracle
-4. Microsoft SQL Server
-5. MongoDB
-6. Cassandra
-7. Redis
+4. min() : find the minimum values from tables or salary of employee
+          
+          examples : select min(salary) from shop_employees;
+                     or 
+                     select min(salary) as minimum_salary_employee from shop_employees;
+
+5. count() : count the total numbers of employee
+           
+           examples : select count(id) as total_numbers_employee from shop_employees;
+                      or
+                      select count(id)  from shop_employees; 
+
+#  scalar function
+
+1. first() : select a first rows from tables 
+          examples: select first from shop_employees;
+
+2. last() : select last rows from tables 
+           examples : select last from shop_employees;  
+3. lcase() : select and convert any column in lower case 
+           examples : select lcase(name) from shop_employees
+4. ucase() : select and convert any column in upper case 
+           examples : select ucase(name) from shop_employees 
+
+
+# subquery : query within another query i.e called subquery 
+
+    examples : query within another query i.e called subquery find the second highest salary from shop_employees
+
+**second highest salary**
+
+```
+select max(salary) from shop_employees where salary <(select max(salary) from shop_employees);
+or
+select max(salary) as second_highest_salary from shop_employees where salary <(select max(salary) from shop_employees);
+
+```
+
+# whats is alias in SQL 
+
+  1. alias is used to convert any column name in tables 
+
+  ```
+  select name as firstname from shop_employees
+
+  ```  
+
+# SQL key constraints 
+
+  1. key constraints provides limit on tables 
+  2. key constraints used to set limitation on tables 
+  3. key constraints set relationship between tables 
+  4. key constraints set to normalized tables 
+
+# types of key constraints 
+
+  1. primary key
+  2. foreign key
+  3. unique key 
+  4. compound key
+
+# primary key (pk) : 
+
+  1. A primary key set on id 
+  2. A pk is always set only once time in a tables 
+  3. A pk is always auto_increments 
+  4. A pk is never return null values and stored a unique values 
+
+
+| id | employee_name |
+|----|---------------|
+| 1  | Amit Shah     |
+| 2  | Neha Patel    |
+| 3  | Raj Mehta     |
+| 4  | Priya Desai   |
+| 5  | Karan Singh   |
+
+# note : id is always primary key with auto_increments 
+
+ **create in SQL**
+
+ ```
+ CREATE TABLE employees (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    employee_name VARCHAR(100)
+);
+
+ ```
