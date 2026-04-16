@@ -478,3 +478,90 @@ select max(salary) as second_highest_salary from shop_employees where salary <(s
 );
 
  ```
+# unique key (uk) : 
+
+  1. A unique key set on any columns
+  2. A uk is always set to create a unique columns does not stored dublicate values 
+  3. A uk is provides uniquely stored data
+  4. A uk is  return once time a null values 
+
+
+| id | employee_name | age | salary |email |  phone        |
+|----|---------------|-----|--------|------|---------------|
+| 1  | Amit Shah     | 65  | 100000 |a@gmail.com|9998003879|
+| 2  | Neha Patel    | 22  | 25000  |n@gmail.com|9998003578|
+| 3  | Raj Mehta     | 25  | 28500  |r@gmail.com|9173357217|
+| 4  | Priya Desai   | 24  | 29500  |p@gmail.com|653548568 |  
+| 5  | Karan Singh   | 25  | 30500  |k@gmail.com|631515151 |
+
+# note : UK provides to does not stored a dublicate values in tables
+
+ **create in SQL a unique key**
+ ```
+ ALTER TABLE `employees` ADD UNIQUE(`phone`);
+ or
+ ALTER TABLE `employees` ADD UNIQUE(`email`);
+
+ ``` 
+
+
+# foreign key (fk) : 
+
+  1. A fk key set on any columns create a relationship
+  2. A fk create a relationship between one table to another table with common field
+  3. A fk is dublicate and provides relationship
+
+
+**country**
+
+|cid     |name      |
+|--------|----------|
+| 1      |India     |
+| 2      |USA       |
+
+**users**
+
+| uid |    name      | age | salary |email |  phone        |  cid  |
+|----|---------------|-----|--------|------|---------------|-------|
+| 1  | Amit Shah     | 65  | 100000 |a@gmail.com|9998003879|   1   |
+| 2  | Neha Patel    | 22  | 25000  |n@gmail.com|9998003578|   2   | 
+| 3  | Raj Mehta     | 25  | 28500  |r@gmail.com|9173357217|   1   |
+| 4  | Priya Desai   | 24  | 29500  |p@gmail.com|653548568 |   2   |
+| 5  | Karan Singh   | 25  | 30500  |k@gmail.com|631515151 |   2   |
+
+# note : fK provides to   stored a dublicate values in tables for relationship
+
+ **create in SQL a fk key**
+
+```
+ create table country
+(
+cid int AUTO_INCREMENT primary key,
+cname varchar(255)    
+) 
+```
+
+```
+ create table users
+(
+uid int AUTO_INCREMENT primary key,
+name varchar(255),
+email varchar(255),
+phone bigint,
+cid int REFERENCES country(cid)    
+) 
+ ``` 
+
+```
+create table products
+(
+pid int AUTO_INCREMENT primary key,
+catid int REFERENCES categories(catid),    
+subcatid int REFERENCES subcategories(subcatid),    
+pname varchar(255),
+qty int,
+price int,
+descriptions text    
+)
+
+```
