@@ -519,25 +519,67 @@ select max(salary) as second_highest_salary from shop_employees where salary <(s
 | 1      |India     |
 | 2      |USA       |
 
+**state**
+
+|sid     |sname        | cid    |
+|--------|-------------|--------|
+| 1      |gujrat       |  1     |
+| 2      |uttar pradesh|  1     |
+| 3      |California   |  2     |
+
+
+**city**
+
+|ctid    |ctname       | sid    |
+|--------|-------------|--------|
+| 1      |ahemdabad    |  1     |
+| 2      |Mathura      |  2     |
+| 3      |Navada       |  3     |
+
 **users**
 
-| uid |    name      | age | salary |email |  phone        |  cid  |
-|----|---------------|-----|--------|------|---------------|-------|
-| 1  | Amit Shah     | 65  | 100000 |a@gmail.com|9998003879|   1   |
-| 2  | Neha Patel    | 22  | 25000  |n@gmail.com|9998003578|   2   | 
-| 3  | Raj Mehta     | 25  | 28500  |r@gmail.com|9173357217|   1   |
-| 4  | Priya Desai   | 24  | 29500  |p@gmail.com|653548568 |   2   |
-| 5  | Karan Singh   | 25  | 30500  |k@gmail.com|631515151 |   2   |
+| uid |    name      | age | salary |email |  phone        |  cid  |sid   |ctid |
+|----|---------------|-----|--------|------|---------------|-------|------|-----|
+| 1  | Amit Shah     | 65  | 100000 |a@gmail.com|9998003879|   1   | 1    | 1   |
+| 2  | Neha Patel    | 22  | 25000  |n@gmail.com|9998003578|   2   | 3    | 2   | 
+| 3  | Raj Mehta     | 25  | 28500  |r@gmail.com|9173357217|   1   | 2    | 1   |
+| 4  | Priya Desai   | 24  | 29500  |p@gmail.com|653548568 |   2   | 3    | 3   |
+| 5  | Karan Singh   | 25  | 30500  |k@gmail.com|631515151 |   2   | 3    | 3   |
 
 # note : fK provides to   stored a dublicate values in tables for relationship
 
  **create in SQL a fk key**
+
+
+**country**
 
 ```
  create table country
 (
 cid int AUTO_INCREMENT primary key,
 cname varchar(255)    
+) 
+```
+
+**state**
+
+```
+create table state
+(
+sid int AUTO_INCREMENT primary key,
+sname varchar(255),
+cid int REFERENCES country(cid)    
+) 
+```
+
+**city**
+
+```
+create table city
+(
+ctid int AUTO_INCREMENT primary key,
+ctname varchar(255),
+sid int REFERENCES state(sid)    
 ) 
 ```
 
@@ -548,7 +590,10 @@ uid int AUTO_INCREMENT primary key,
 name varchar(255),
 email varchar(255),
 phone bigint,
-cid int REFERENCES country(cid)    
+cid int REFERENCES country(cid),
+sid int REFERENCES state(sid),
+ctid int REFERENCES city(ctid)
+
 ) 
  ``` 
 
@@ -565,3 +610,55 @@ descriptions text
 )
 
 ```
+
+```
+ create table company
+(
+compid int AUTO_INCREMENT primary key,
+compname varchar(255)    
+) 
+
+```
+
+```
+create table tbl_employees
+(
+empid int AUTO_INCREMENT primary key,
+name varchar(255),
+age int,
+phone bigint,
+address  text,  
+salary int, 
+compid int REFERENCES company(compid)    
+
+)
+
+```
+
+# compound key  :
+
+  1. compound key  
+
+     1.  compound key is not max used to provides key constraints in a table 
+     2.  compund key is also used to stored an unique data in tables 
+     3.  compund key is also used to provides more than one tables 
+
+
+
+# SQL join : 
+
+  1. sql join are used to join more than one tables itself with common field 
+  2. sql join are used to join tables with match data one tables to another tables 
+
+
+# types of SQL join ...
+
+  1. join 
+  2. inner join 
+  3. outer join 
+      1. left join 
+      2. right join 
+      3. full join
+  4. cross join     
+
+
