@@ -662,3 +662,102 @@ compid int REFERENCES company(compid)
   4. cross join     
 
 
+1. what is join ?
+
+   1. join is used to join more than one table with common field if data match from one table to another table with common filed it join otherwise return null values.
+
+   ```
+   select users.*,cname from users join country on users.cid=country.cid;
+   ``` 
+
+2. what is inner join ?
+
+    1. inner join is used to join more than one table with common field if data match from one table to another table with common filed it join otherwise return null values.
+
+    2. inner join and join both are same 
+
+   ```
+   select users.*,cname from users inner join country on users.cid=country.cid;
+   ``` 
+
+3. what is outer join ?
+  
+   outer join are three types ?
+   1. left join : 
+
+      left join are used to join first table of left coloumn match with second table of left column if data matched return all data otherwise return null values   
+
+
+      ```
+      select products.*,catname,subcatname from products left join categories on products.catid=categories.catid left join subcategories on products.subcatid=subcategories.subcatid
+
+      or 
+      
+      select  pname,qty,price,descriptions,catname,subcatname from products left join categories on products.catid=categories.catid left join subcategories on products.subcatid=subcategories.subcatid
+
+      ```
+
+    2. right join : 
+
+      right join are used to join second table of right coloumn match with first table of right column if data matched return all data otherwise return null values.   
+
+
+      ```
+      select products.*,catname,subcatname from products right join categories on products.catid=categories.catid right join subcategories on products.subcatid=subcategories.subcatid
+
+      or 
+      
+      select  pname,qty,price,descriptions,catname,subcatname from products right join categories on products.catid=categories.catid right join subcategories on products.subcatid=subcategories.subcatid
+
+      ``` 
+
+    3. full join : full join is combination of left join + right join 
+
+       Note : but full join is not supported in mysql structures 
+
+
+ 4. cross join : cross join is used to join tables and multiply by eaach column and join and return data. 
+
+   note : return a dublicat data 
+
+     examples: 
+
+      ```
+      select * from users cross join country
+
+      ```
+
+    Note : this will be used in chain marketing type of company or insurense types of company     
+
+
+       A 
+
+    B   C   D 
+
+E F G   H I J   K L M N O P       
+
+
+4. TCL : trasanction control language 
+
+   1. TCL is used to transactional control language 
+   2. TCL commit data (save after delete ) 
+   3. TCL rollback data (after delete we rollback data)
+   4. Note : TCL only support in oracle database its not supted by sqllite or musql
+
+   **how to save data or commit data**
+
+   ```
+    START TRANSACTION;
+    delete from country where cid=4;
+    commit;
+
+   ```
+
+   **how to rollback data using TCL**
+
+   ```
+   START TRANSACTION;
+   select * from country where cid=3;
+   rollback;
+
+   ```
