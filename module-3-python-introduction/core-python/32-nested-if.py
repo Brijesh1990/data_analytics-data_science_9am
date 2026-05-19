@@ -10,13 +10,21 @@
 # else:
 #     statements
 
+# a=10
+# b=5
+# if a>b:
+#     if a!=0 and b!=0:
+#         print("a is greater than b and both are positive number")
+# else:
+#     print("a is less than b")
+        
+        
 a=10
 b=5
 if a>b:
     if a!=0 and b!=0:
         print("a is greater than b and both are positive number")
 else:
-    print("a is less than b")
-        
+    print("a is less than b")        
 
 

@@ -22,6 +22,7 @@
 
 a=int(input("Enter a values: "))
 b=int(input("Enter b values: "))
+
 if a>b:
     print("a is greater than b")
  

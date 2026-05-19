@@ -6,12 +6,12 @@
 # else:
 #     statements
 
-# a=20
-# b=15
-# if a>b:
-#     print("a is greater than b")
-# else:
-#     print("a is less than b") 
+a=5
+b=15
+if a>b:
+    print("a is greater than b")
+else:
+    print("a is less than b") 
     
     
 # w.a.p to print a number is odd or even 
