@@ -1,0 +1,1 @@
+# w.a.p to find average marks on given 5 subjects 
