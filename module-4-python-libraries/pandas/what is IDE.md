@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # what is IDE ?
   1. IDE stands for integrated device environment
   2. IDE is sort like text editor where we can write a code 
@@ -11,4 +12,19 @@
   6. jupyter 
   7. enaconda 
 
+=======
+# what is IDE ?
+  1. IDE stands for integrated device environment
+  2. IDE is sort like text editor where we can write a code 
+
+  **types of IDE**
+  1. VS code 
+  2. sublime text3
+  3. dream viewer
+  4. pycharm
+  5. notepad++
+  6. jupyter 
+  7. enaconda 
+
+>>>>>>> 0783fe4ec66c84df7c94e6497fafb9aff9804ade
   
