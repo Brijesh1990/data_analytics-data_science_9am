@@ -761,3 +761,285 @@ E F G   H I J   K L M N O P
    rollback;
 
    ```
+
+
+# what is view in SQL ? 
+
+1. view is used to create for any tables 
+2. view is used to create a dublicate tables or virtual tables 
+3. view is create a clone of our  original tables 
+4. view is used to create to hide some data from some users so we can create views of that tables 
+
+syntax :  
+
+```
+create view viewname as select  columnname1 , columnname2 , columnname3 from tblname where id=1
+
+or 
+
+create view flip_employee_view as select empid, name , age , salary, added_date from flip_employee where empid=3;
+
+```      
+# note :   
+
+1. we can also insert | delete | update and alter any data from original tables  its also effects on its virtuals  tables 
+
+2. insert into flip_employee_view (name,age,salary,added_date) values('kumar',32,45500,'2026-06-12')
+
+3. delete from flip_employee_view where empid=7;
+
+4. delete from flip_employee where empid=3;
+
+
+# what is index in SQL ? 
+
+1. SQL index  is used to create for improved the speed or performance of tables there we create an index or indexer 
+
+2.SQL indexer create on single columns or multiples columns of tables 
+
+3. SQL indexer create multiple columns composite indexer 
+
+4. if we create only one columns an indexer its create a sigle indexer 
+
+5. indexer is used to improved performance or speed or fast lookup data from tables so we can create an indexer of table.
+
+# syntax of create indexer ...
+
+```
+create index indexname on tablename (columnname1, columnname1, columname2....)
+or
+create index flip_index_employee on flip_employee (empid, name, age, phone)
+
+```
+
+
+
+# SQL windows functions .....
+
+1. SQL windows functions is used to applied calculation | add unique rows to current rows in a tables 
+
+2. SQL windows functions are used to add or set a rows related to the current row without grouping the result into a single row 
+
+
+# types of  windows functions 
+
+1. ROW_NUMBER()
+
+2. RANK()
+
+3. DENSE_RANK()
+
+4. NTILE()
+
+5. LAG()
+
+6. LEAD()
+
+7. FIRST_VALUE()
+
+8. LAST_VALUE()
+
+9. SUM() OVER()
+
+10. AVG() OVER()
+
+11. MIN() OVER()
+
+12) MAX() OVER()
+
+13) COUNT() OVER()
+
+
+
+# create a tables employee ....  
+
+1. create table name with flip_employee
+
+2. ROW_NUMBER(): assingns a unique number to each rows 
+
+```
+select name , salary , ROW_NUMBER() OVER(order by salary desc) from flip_employee  
+
+```
+
+3. RANK() : provides ranking with gaps for dublicate values 
+
+```
+select name, salary, RANK() OVER(order by salary desc) as rank_no from employee;  
+```
+
+4. DENSE_RANK() : provides ranking without gaps for dublicate values 
+
+```
+select name, salary, DENSE_RANK() OVER(order by salary desc) as rank_no from employee;
+
+```
+
+5. NTILE() : divides rows into equal group 
+
+``` 
+select name, salary, NTILE(3) OVER(order by salary desc) as group_no from flip_employee;
+```
+
+6. LAG() : return previous rows values 
+
+```
+select name, salary , LAG(salary, 1) OVER(order by salary desc) as prevoius_salary from flip_employee; 
+``` 
+
+7. LEAD() : return next row value 
+
+```
+select name, salary , LEAD(salary, 1) OVER(order by salary desc) as prevoius_salary from flip_employee;   
+
+```
+
+8. FIRST_VALUES() : return first values in windows 
+
+```
+select name, salary , FIRST_VALUE(salary) OVER(order by salary desc) as first_max_salary from flip_employee; 
+``` 
+
+
+
+8. LAST_VALUES() : return last values in windows 
+
+```
+select name, salary , LAST_VALUE(salary) OVER(order by salary desc) as LAST_VALUES_SALARY from flip_employee; 
+
+``` 
+
+9. SUM() : running with total in windows 
+
+```
+select name, salary , SUM(salary) OVER(order by salary) as total_sum_SALARY from flip_employee; 
+
+```
+
+
+9. AVG() : running with avg in windows 
+
+```
+select name, salary , AVG(salary) OVER(order by salary) as average_salary from flip_employee; 
+
+```
+
+10. MIN() OVER(): minimum values in windows
+
+```
+select name, salary , MIN(salary) OVER(order by salary) as MIN_SALARY from flip_employee;      
+
+```
+
+
+10. MAX() OVER(): maximum values in windows
+
+```
+select name, salary , MAX(salary) OVER(order by salary) as MAX_SALARY from flip_employee;      
+
+```
+
+11) COUNT() OVER() : count rows of windows
+
+```
+select name, salary , COUNT(empid) OVER(order by empid) as COUNT_EMPLOYEE from flip_employee;    
+```    
+
+# SQL WITH Clause
+
+1. The SQL WITH clause (Common Table Expression or CTE) defines a temporary result set that can be used within a query. 
+2. It simplifies complex SQL statements, making them easier to read, manage and reuse. 
+
+```
+WITH AvgSalaryCTE (averageValue) AS (
+SELECT AVG(Salary)
+FROM flip_employee
+)
+SELECT 
+empid,
+name, 
+salary 
+FROM 
+flip_employee 
+WHERE 
+Salary > (SELECT averageValue FROM AvgSalaryCTE);
+
+```      
+
+# mySQLworkbench ................
+
+ **what is MySQL workbench**
+ 
+  ```
+  MySQL Workbench is a visual, all-in-one graphical user interface (GUI) and Integrated Development Environment (IDE) used by database administrators, architects, and developers to manage, design, and query MySQL databases. It replaces command-line interfaces with a point-and-click environment.
+ 
+  ```
+
+ ![alt text](image-5.png)
+
+
+  user : root
+  pass : admin
+
+  SQL workbench integerate ....
+
+  DDL
+  DML
+  DQL 
+  TCL
+
+```  
+INSERT INTO `flipkart_db`.`customers` (`id`, `name`, `password`, `mobile`, `address`) VALUES ('4', 'mitesh', 'm562121', '9121212121', 'ghandhinagar');
+
+```
+
+1. create database 
+
+   ![alt text](image.png)
+
+2. create a table  in mysqlworkBench8.0
+
+   ```
+   CREATE TABLE `brijesh_db`.`tbl_users` (
+   uid int auto_increment primary key,
+   username varchar(255),
+   email varchar(255),
+   password varchar(255),
+   phone bigint,
+   address text,
+   pincode int
+
+   );
+
+   ```
+
+3. insert a data in tables 
+
+   ```
+    insert into brijesh_db.tbl_users values(null,'aryan', 'arayn007@gmail.com','a5452122',91212121,'150 feet ring road rajkot',360005),(null,'mishri', 'mishri007@gmail.com','mish5452122',81212121,'150 feet ring road rajkot',360005),(null,'nimavat', 'n007@gmail.com','n5452122',91265121,'150 feet ring road rajkot',360005)
+   ```
+
+   ![alt text](image-1.png)
+
+
+ 4. alter or change column name in table 
+
+    ```
+    alter table brijesh_db.tbl_users change phone mobile bigint;
+
+    ```
+
+  5. mysql workbench GUI insert data 
+
+     ![alt text](image-2.png)  
+
+  6. myssqlWorkbench  GUI strucures
+
+     ![alt text](image-3.png)   
+
+
+  7. migrate in xampp strucres all database 
+
+    ![alt text](image-4.png)   
+
+
